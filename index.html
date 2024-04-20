@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+
+        button {
+            height: 70px;
+            width:10px;
+            padding:0px;
+            margin:20px;
+        }
+
+        input {
+            
+        }
+
+        .des {
+    border: 5px solid #2C3062;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    width:80%;   
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #333;
+        }
+        
+    </style>
+</head>
+<body>
+
+
+    <!-- CONTAINER -->
+    <div class="des">
+        <h1 class="mt-5" style="text-align: center;color:white;"> Calculator</h1><br>
+<div class="container">
+    <div class="calculator">
+        <input type="text" id="display" class="form-control mb-2" readonly>
+
+
+<!-- ROW -->
+
+        <div class="row">
+
+            <!-- CLEAR BUTTON -->
+
+
+            <div class="col-md-3">
+                <button class="btn btn-danger btn-block" onclick="clearDisplay()"> AC </button>
+            </div>
+<!-- FIRST ROW 7,8,9 -->
+
+<div class="col-md-3">
+    <button class="btn btn-primary btn-block" onclick="appendToDisplay('7')">7</button>
+
+</div>
+
+
+<div class="col-md-3">
+    <button class="btn btn-primary btn-block" onclick="appendToDisplay('8')">8</button>
+    
+</div>
+
+
+
+<div class="col-md-3">
+    <button class="btn btn-primary btn-block" onclick="appendToDisplay('9')">9</button>
+    
+</div>
+        </div>
+
+
+        <!-- ROW 2 (4,5,6)-->
+        <div class="row">
+
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-block" onclick="appendToDisplay('4')">4</button>
+                
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-block" onclick="appendToDisplay('5')">5</button>
+                
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-primary btn-block" onclick="appendToDisplay('6')">6</button>
+                
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-warning btn-block" onclick="appendToDisplay('-')">-</button>
+                
+            </div>
+            
+        </div>
+
+
+
+        <!-- ROW 3 (1,2,3)-->
+<div class="row">
+    <div class="col-md-3">
+        <button class="btn btn-primary btn-block" onclick="appendToDisplay('1')">1</button>
+        
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-primary btn-block" onclick="appendToDisplay('2')">2</button>
+        
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-primary btn-block" onclick="appendToDisplay('3')">3</button>
+        
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-warning btn-block" onclick="appendToDisplay('+')">+</button>
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <button class="btn btn-primary btn-block" onclick="appendToDisplay('0')">0</button>
+        
+    </div>
+
+    <div class="col-md-3">
+        <button class="btn btn-info btn-block" onclick="appendToDisplay('.')">.</button>
+        
+    </div>
+
+    <div class="col-md-3">
+        <button class="btn btn-success btn-block" onclick="calculateResult()">=</button>
+        
+   </div>
+   <div class="col-md-3">
+    <button class="btn btn-warning btn-block" onclick="appendToDisplay('*')">X</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function appendToDisplay(value) {
+    document.getElementById('display').value += value;
+}
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+
+    }
+function calculateResult() {
+    const display = document.getElementById('display');
+    try {
+        display.value = eval(display.value);
+    } catch (error) {
+        display.value="error";
+    }
+}
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
